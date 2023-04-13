@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/kultura-sveta/static/css/main.a9f8fb48.css",
+    "main.js": "/kultura-sveta/static/js/main.93a51d5d.js",
+    "static/media/SF-Pro-Display-Bold.woff2": "/kultura-sveta/static/media/SF-Pro-Display-Bold.ff426b2dd6629d4b3153.woff2",
+    "static/media/SF-Pro-Display-Regular.woff2": "/kultura-sveta/static/media/SF-Pro-Display-Regular.dc37d96f4270d27fd1a6.woff2",
+    "static/media/SF-Pro-Display-Bold.woff": "/kultura-sveta/static/media/SF-Pro-Display-Bold.de44ba31b24b87fb127e.woff",
+    "static/media/SF-Pro-Display-Regular.woff": "/kultura-sveta/static/media/SF-Pro-Display-Regular.80d567b91b40397c4c20.woff",
+    "static/media/Moscow-1.jpg": "/kultura-sveta/static/media/Moscow-1.ca4cbddd1ae16f8280a7.jpg",
+    "static/media/logo.png": "/kultura-sveta/static/media/logo.ec88cadcf3e731b3857f.png",
+    "static/media/FuturaPT-Book.woff": "/kultura-sveta/static/media/FuturaPT-Book.d554082b7184cb0a84b7.woff",
+    "static/media/TenorSans-Regular.woff": "/kultura-sveta/static/media/TenorSans-Regular.376b88c1635dae964eee.woff",
+    "static/media/TenorSans-Regular.woff2": "/kultura-sveta/static/media/TenorSans-Regular.2246f06146be3e96566c.woff2",
+    "static/media/FuturaPT-Book.woff2": "/kultura-sveta/static/media/FuturaPT-Book.ad56f168e23d283dcc69.woff2",
+    "index.html": "/kultura-sveta/index.html",
+    "main.a9f8fb48.css.map": "/kultura-sveta/static/css/main.a9f8fb48.css.map",
+    "main.93a51d5d.js.map": "/kultura-sveta/static/js/main.93a51d5d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9f8fb48.css",
+    "static/js/main.93a51d5d.js"
+  ]
+}

@@ -1,0 +1,39 @@
+@import "styles/mixins";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapperDefault {
+  .image {
+    width: 10rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  .imageClickable {
+    cursor: pointer;
+  }
+
+  .name {
+    @include fontText(black);
+
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: 1.4rem;
+  }
+
+  .button {
+    @include addExtension;
+
+    font-size: 0;
+  }
+
+  .icon {
+    width: 0.8rem;
+  }
+}
+

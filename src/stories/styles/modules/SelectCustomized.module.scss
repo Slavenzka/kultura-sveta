@@ -1,0 +1,14 @@
+@import "styles/mixins";
+
+.option {
+  background-color: palegreen;
+
+  &:hover {
+    background-color: red;
+  }
+}
+
+.optionSelected {
+  pointer-events: none;
+  background-color: lightgray;
+}

@@ -1,0 +1,51 @@
+@import "styles/mixins";
+
+.buttonDisabled,
+.buttonLoading {
+  pointer-events: none;
+}
+
+.spinner {
+  position: absolute;
+  top: calc(50% - 2rem / 2);
+  right: -3rem;
+  width: 2rem;
+  stroke: color(black);
+}
+
+.buttonDisabled {
+  opacity: 0.5;
+}
+
+.buttonString {
+  @include fontRegular(color(black));
+
+  transition-duration: $transitionDuration;
+  transition-property: opacity;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  .spinner {
+    stroke: color(black);
+  }
+}
+
+button.buttonFilled {
+  @include fontRegular(color(gray600));
+  @include transitionDuration;
+
+  padding: 0 2rem;
+  background-color: color(white);
+  border-radius: 0.6rem;
+  transition-property: background-color;
+
+  &:hover {
+    background-color: color(gray300);
+  }
+}
+
+.buttonHeightRegular {
+  height: var(--button-height-regular);
+}

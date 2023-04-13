@@ -1,0 +1,23 @@
+@import "styles/mixins";
+
+.content {
+  --image-width: 30rem;
+  display: grid;
+  grid-template-columns: var(--image-width) 1fr;
+  grid-gap: 4rem;
+  align-items: center;
+  margin-top: 4rem;
+
+  &::before {
+    content: "";
+    display: block;
+    width: var(--image-width);
+    height: calc(var(--image-width) / 2);
+    background-image: url("../../assets/images/Moscow-1.jpg");
+    background-size: cover;
+  }
+}
+
+.form {
+  margin-top: 4rem;
+}

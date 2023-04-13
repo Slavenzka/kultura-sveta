@@ -1,0 +1,62 @@
+@import "../../../styles/mixins";
+
+.wrapper {
+  position: relative;
+  background-color: lightgray;
+  box-shadow: 0.2rem 0.2rem 0.3rem rgba(255, 0, 0, 0.2);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    width: calc(100% + 2rem);
+    height: calc(100% + 2rem);
+  }
+
+  &[data-popper-placement^='top'] > .arrow {
+    bottom: -0.4rem;
+  }
+
+  &[data-popper-placement^='bottom'] > .arrow {
+    top: -0.4rem;
+  }
+
+  &[data-popper-placement^='bottom-end'] > .arrow {
+    top: -0.4rem;
+  }
+
+  &[data-popper-placement^='left'] > .arrow {
+    right: -0.4rem;
+  }
+
+  &[data-popper-placement^='right'] > .arrow {
+    left: -0.4rem;
+  }
+}
+
+.content {
+  position: relative;
+  padding: 0.5rem;
+  min-width: 15rem;
+  max-width: 30rem;
+  z-index: 1;
+}
+
+.arrow,
+.arrow::before {
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: inherit;
+}
+
+.arrow {
+  visibility: hidden;
+}
+
+.arrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}

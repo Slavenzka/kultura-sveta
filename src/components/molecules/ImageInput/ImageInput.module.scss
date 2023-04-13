@@ -1,0 +1,24 @@
+@import "../../../styles/mixins";
+
+.wrapper {
+  margin-top: auto;
+}
+
+.input {
+  @include visuallyHidden;
+}
+
+.list {
+  margin-top: 2rem;
+}
+
+.item {
+  &:not(:first-child) {
+    margin-top: 1rem;
+  }
+}
+
+.image {
+  max-width: 90vw;
+  max-height: 90vh;
+}

@@ -1,0 +1,10 @@
+$colors: (
+  white: rgb(255, 255, 255),
+  gray300: rgb(151, 151, 151),
+  gray600: rgb(32, 32, 32),
+  black: rgb(0, 0, 0),
+);
+
+@function color($color) {
+  @return map-get($colors, $color);
+}

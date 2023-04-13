@@ -1,0 +1,58 @@
+@import "styles/mixins";
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.label {
+  @include fontRegular(color(white));
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.wrapperDark {
+  color: black;
+
+  .label {
+    font-weight: 600;
+    opacity: 1;
+  }
+}
+
+.wrapperImageDefault {
+  display: block;
+  padding: 1rem;
+  border: 1px dotted red;
+  cursor: pointer;
+
+  &:hover {
+    border-style: solid;
+
+    .label {
+      color: blue;
+    }
+  }
+
+  .label {
+    display: flex;
+    flex-direction: column;
+    color: green;
+  }
+
+  .content {
+    @include visuallyHidden;
+  }
+
+  &.wrapperDisabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &.wrapperError {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+}

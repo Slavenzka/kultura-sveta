@@ -1,0 +1,11 @@
+@import "../../../styles/mixins";
+
+.wrapper {
+  display: flex;
+}
+
+.icon {
+  width: 100%;
+  fill: red;
+  cursor: pointer;
+}

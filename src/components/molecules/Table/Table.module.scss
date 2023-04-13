@@ -1,0 +1,48 @@
+@import "styles/mixins";
+
+.wrapper {
+  width: 100%;
+}
+
+.rowHeading {
+}
+
+.heading {
+  @include fontTableLabel(black);
+
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0.5rem;
+  height: 4.6rem;
+  text-align: left;
+  background-color: white;
+}
+
+.rowsWrapper {
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+.row {
+  display: grid;
+
+  & > *:first-child {
+    padding-left: 3rem;
+  }
+
+  & > *:last-child {
+    padding-right: 3rem;
+  }
+}
+
+.rowClickable {
+  cursor: pointer;
+
+  &:hover {
+    background-color: paleturquoise;
+  }
+}
+
+
+.wrapperEmpty {
+}

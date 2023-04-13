@@ -1,0 +1,16 @@
+@import "styles/mixins";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 3rem;
+  padding: 0;
+  border: none;
+}
+
+.button {
+  grid-column: 1 / -1;
+
+  display: block;
+  margin: 4rem auto 0 auto;
+}

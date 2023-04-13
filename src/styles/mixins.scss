@@ -1,0 +1,147 @@
+@import "styles/variables/index";
+
+// font mixins
+@mixin h1 ($color) {
+  font-family: "Futura", Arial, sans-serif;
+  font-size: 2.9rem;
+  font-weight: 600;
+  line-height: 3.7rem;
+  color: $color;
+}
+
+@mixin h2 ($color, $weight: 600) {
+  font-family: "Tenor Sans", Arial, sans-serif;
+  font-size: 7rem;
+  font-weight: $weight;
+  line-height: 7.8rem;
+  color: $color;
+}
+
+@mixin h3 ($color, $weight: 300) {
+  font-family: "Futura", Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: $weight;
+  line-height: 2.5rem;
+  color: $color;
+}
+
+@mixin h4 ($color, $weight: 400) {
+  font-family: "Futura", Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: $weight;
+  line-height: 2.3rem;
+  color: $color;
+}
+
+@mixin fontRegular($color) {
+  font-family: "Futura", Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  color: $color;
+}
+
+@mixin fontSmall($color) {
+  font-family: "Futura", Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  color: $color;
+}
+
+// reset mixins
+@mixin resetButton {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+@mixin resetFieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+@mixin resetList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin resetInput {
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+// style mixins
+@mixin visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  font-size: 0;
+}
+
+@mixin inputStyleDefault {
+  @include fontRegular(color(white));
+  @include transitionDuration;
+
+  padding: 0 1rem;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid white;
+  outline: 2px solid transparent !important;
+  box-shadow: none;
+  border-radius: 0;
+  transition-property: outline-color, border-color;
+
+  &:focus,
+  &:hover {
+    outline: 2px solid color(white) !important;
+  }
+}
+
+@mixin inputStyleDefaultDisabled {
+  background-color: lightgray;
+  border-color: lightgray;
+}
+
+@mixin addExtension($width: 1rem) {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(-1 * $width);
+    left: calc(-1 * $width);
+    width: calc(100% + $width * 2);
+    height: calc(100% + $width * 2);
+  }
+}
+
+@mixin revealAnimation {
+  animation: revealContent ease-in $transitionDuration
+}
+
+@keyframes revealContent {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@mixin transitionDuration {
+  transition-duration: $transitionDuration;
+}

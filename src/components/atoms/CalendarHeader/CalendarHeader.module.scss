@@ -1,0 +1,43 @@
+@import "styles/variables/index";
+@import "styles/mixins";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.label {
+  @include fontRegular(color(black));
+}
+
+.button {
+  width: 4rem;
+  height: 5rem;
+  justify-content: flex-start;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.buttonNext {
+  justify-content: flex-end;
+
+  .icon {
+    transform: rotate(180deg);
+  }
+}
+
+.icon {
+  width: 0.8rem;
+  fill: color(black);
+}
+
+.selectionWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

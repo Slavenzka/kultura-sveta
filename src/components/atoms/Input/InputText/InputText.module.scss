@@ -1,0 +1,150 @@
+@import "styles/mixins";
+
+.wrapperDefault {
+  width: 100%;
+
+  .input {
+    @include inputStyleDefault;
+  }
+
+  .error {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+  }
+
+  .errorIcon {
+    top: auto;
+    bottom: 0;
+    right: 0;
+  }
+
+  &.wrapperDisabled {
+    pointer-events: none;
+
+    .input {
+      @include inputStyleDefaultDisabled;
+    }
+  }
+
+  &.wrapperLoading {
+    pointer-events: none;
+
+    .spinner {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      stroke: black;
+    }
+  }
+
+  &.wrapperSmall {
+    .input {
+      font-size: 1.2rem;
+    }
+
+
+    .errorIcon {
+      right: 0.5rem;
+      bottom: 0.9rem;
+    }
+
+    &.wrapperIconError {
+      .error {
+        width: 1.5rem;
+      }
+
+      .input {
+        padding-right: 1.5rem;
+      }
+    }
+
+    &.wrapperLoading {
+      .spinner {
+        width: 1.5rem;
+        bottom: 0.9rem;
+        right: 1rem;
+      }
+    }
+  }
+
+  &.wrapperRegular {
+    .errorIcon {
+      right: 0.5rem;
+      bottom: 1.2rem;
+    }
+
+    &.wrapperLoading {
+      .spinner {
+        width: 2rem;
+        bottom: 1rem;
+        right: 1rem;
+      }
+    }
+
+    &.wrapperError {
+      .input {
+        border-color: red;
+
+        &:hover,
+        &:focus {
+          outline-color: red;
+        }
+      }
+
+      .label {
+        color: red;
+      }
+    }
+  }
+
+  &.wrapperLarge {
+    .input {
+      font-size: 1.7rem;
+    }
+
+    .errorIcon {
+      right: 0.5rem;
+      bottom: 1.6rem;
+    }
+  }
+
+  &.wrapperIconError {
+    .error {
+      width: 2rem;
+    }
+
+    .input {
+      padding-right: 2.5rem;
+    }
+  }
+
+  &.wrapperLoading {
+    .spinner {
+      width: 2.5rem;
+      bottom: 1.3rem;
+      right: 1rem;
+    }
+  }
+}
+
+.wrapperSmall {
+  .input {
+    height: var(--input-height-small);
+  }
+}
+
+.wrapperRegular {
+  .input {
+    height: var(--input-height-regular);
+  }
+}
+
+.wrapperLarge {
+  .input {
+    height: var(--input-height-large);
+  }
+}
+
+.input {
+  @include resetInput;
+}

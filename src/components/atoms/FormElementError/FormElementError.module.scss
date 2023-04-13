@@ -1,0 +1,7 @@
+@import "styles/mixins";
+
+.wrapper {
+  @include fontSmall(red);
+
+  display: block;
+}

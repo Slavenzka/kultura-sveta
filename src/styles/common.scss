@@ -1,0 +1,53 @@
+@import "fonts";
+@import "styles/mixins";
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: color(gray600);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: color(lightGray) transparent;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: color(lightGray);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none;
+  scrollbar-width: thin;
+  scrollbar-color: color(lightGray) transparent;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: color(lightGray);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.visuallyHidden {
+  @include visuallyHidden;
+}
+
+:where(ul, ol) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

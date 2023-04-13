@@ -1,0 +1,198 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.wrapper {
+  --calendar-footer-height: 4.2rem;
+  --timepicker-area-width: 10rem;
+
+  position: relative;
+  display: flex;
+
+  :global {
+    .react-datepicker {
+      position: relative;
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      border-radius: 0;
+      border: none;
+      z-index: 2;
+
+      &__children-container {
+        width: auto;
+      }
+
+      &-wrapper {
+        //display: none;
+        height: 0;
+      }
+
+      &-popper {
+        padding: 0!important;
+        box-shadow: 0 0.3rem 2.5rem rgba(0, 0, 0, 0.14);
+        border-radius: 1rem;
+        z-index: 3;
+        overflow: hidden;
+      }
+
+      &__header {
+        padding: 0;
+        background-color: transparent;
+        border-bottom: none;
+      }
+
+      &__month-container {
+        padding: 1rem;
+        width: var(--calendar-size);
+      }
+
+      &__day-names {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        margin: 0;
+      }
+
+      &__day-name {
+        @include fontRegular(color(darkGray));
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+        height: 4rem;
+        text-transform: uppercase;
+        opacity: 0.3;
+      }
+
+      &__month {
+        margin: 0.5rem 0 0 0;
+      }
+
+      &__week {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        margin-top: 0.3rem;
+      }
+
+      &__day {
+        @include fontRegular(color(darkGray));
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        width: 100%;
+        height: 4rem;
+        border-radius: 0;
+
+        &:hover {
+          border-radius: 1rem;
+        }
+
+        .react-datepicker__day--wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+
+        &--today {
+          position: relative;
+          font-weight: 700;
+          background-color: transparent;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 3rem;
+            left: calc(50% - 0.4rem / 2);
+            width: 0.35rem;
+            height: 0.4rem;
+            background-color: color(darkGray);
+            border-radius: 50%;
+            z-index: 2;
+          }
+        }
+
+        &--outside-month {
+          opacity: 0.3;
+        }
+
+        &--selected {
+          background-color: transparent;
+          pointer-events: none;
+
+          &.react-datepicker__day--today {
+            &::before {
+              background-color: color(black);
+            }
+          }
+
+          .react-datepicker__day--wrapper {
+            position: relative;
+            color: color(black);
+            background-color: color(blue);
+            border-radius: 1rem;
+          }
+        }
+
+        &--highlighted:not(.react-datepicker__day--selected) {
+          background-color: color(lightBlue);
+        }
+      }
+    }
+  }
+}
+
+.wrapperSingleTimepicker {
+  --timepicker-area-width: 5rem;
+}
+
+.wrapperNoTimepicker {
+  --timepicker-area-width: 0;
+
+  :global {
+    .react-datepicker {
+
+    }
+  }
+}
+
+.wrapperDisabled {
+}
+
+.wrapperSingleDate {
+  :global {
+    .react-datepicker {
+      border-radius: 1rem;
+      box-shadow: 0 0.3rem 2.5rem rgba(0, 0, 0, 0.14);
+
+      &__month-container {
+        padding: 2.5rem 2.5rem 1rem 2.5rem;
+        width: var(--calendar-size);
+        background-color: color(white);
+        border: 1px solid color(blue);
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+
+.timepicker {
+  display: flex;
+  width: max-content;
+  height: 33rem;
+  border-radius: 0 1rem 1rem 0;
+  overflow: hidden;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  height: var(--calendar-footer-height);
+  border-top: 1px solid var(--colorMedium30);
+}

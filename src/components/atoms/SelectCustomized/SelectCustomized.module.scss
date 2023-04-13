@@ -1,0 +1,132 @@
+@import "styles/mixins";
+
+.wrapper {
+  width: 100%;
+
+  :global {
+    .select {
+      &__control {
+        &--menu-is-open {
+          :local {
+            .arrow,
+            [data-select-indicator] {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+
+      &__indicator-separator {
+        display: none
+      }
+
+      &__indicators {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.wrapperDefault {
+  :global {
+    .select {
+      &__control {
+        @include inputStyleDefault;
+
+        height: var(--input-height-regular);
+
+        &:hover {
+          border-color: color(white);
+        }
+
+        &--is-focused {
+          outline: 2px solid color(white);
+        }
+
+        &--is-disabled {
+          @include inputStyleDefaultDisabled;
+        }
+      }
+
+      &__value-container {
+        padding: 0;
+      }
+
+      &__single-value {
+        @include fontRegular(color(white));
+
+        margin: 0;
+      }
+
+      &__menu {
+        padding: 0;
+        border-radius: 0;
+
+        &-list {
+          padding: 0;
+        }
+      }
+
+      &__option {
+        @include fontRegular(color(gray600));
+
+        background-color: color(white);
+
+        &:hover {
+          background-color: color(gray300);
+        }
+      }
+    }
+  }
+}
+
+
+.wrapperDisabled {
+  &:not(.wrapperLoading) {
+    :global {
+      .select {
+        &__indicators {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.wrapperLoading {
+  pointer-events: none;
+}
+
+.wrapperErrorIcon {
+  :global {
+    .select {
+      &__indicators {
+        display: none;
+      }
+    }
+  }
+}
+
+.spinner {
+  height: 2rem;
+  stroke: black;
+}
+
+.arrow,
+[data-select-indicator] {
+  position: relative;
+  margin: 0 1rem;
+  height: 1.5rem;
+  stroke: color(white);
+  fill: color(white);
+  transition-duration: $transitionDuration;
+  transition-property: transform;
+  transform-origin: center;
+}
+
+.errorIcon {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3rem;
+}

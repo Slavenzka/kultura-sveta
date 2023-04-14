@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kultura-sveta/static/css/main.daff0edb.css",
+    "main.css": "/kultura-sveta/static/css/main.f5be8311.css",
     "main.js": "/kultura-sveta/static/js/main.0c8c279e.js",
     "static/media/SF-Pro-Display-Bold.woff2": "/kultura-sveta/static/media/SF-Pro-Display-Bold.ff426b2dd6629d4b3153.woff2",
     "static/media/SF-Pro-Display-Regular.woff2": "/kultura-sveta/static/media/SF-Pro-Display-Regular.dc37d96f4270d27fd1a6.woff2",
@@ -13,11 +13,11 @@
     "static/media/TenorSans-Regular.woff2": "/kultura-sveta/static/media/TenorSans-Regular.2246f06146be3e96566c.woff2",
     "static/media/FuturaPT-Book.woff2": "/kultura-sveta/static/media/FuturaPT-Book.ad56f168e23d283dcc69.woff2",
     "index.html": "/kultura-sveta/index.html",
-    "main.daff0edb.css.map": "/kultura-sveta/static/css/main.daff0edb.css.map",
+    "main.f5be8311.css.map": "/kultura-sveta/static/css/main.f5be8311.css.map",
     "main.0c8c279e.js.map": "/kultura-sveta/static/js/main.0c8c279e.js.map"
   },
   "entrypoints": [
-    "static/css/main.daff0edb.css",
+    "static/css/main.f5be8311.css",
     "static/js/main.0c8c279e.js"
   ]
 }

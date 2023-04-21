@@ -38,11 +38,16 @@ button.buttonFilled {
 
   padding: 0 2rem;
   background-color: color(white);
-  border-radius: 0.6rem;
   transition-property: background-color;
 
   &:hover {
     background-color: color(gray300);
+  }
+
+  &.buttonLoading {
+    .spinner {
+      stroke: color(white);
+    }
   }
 }
 

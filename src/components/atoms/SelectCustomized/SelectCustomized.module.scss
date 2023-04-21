@@ -97,6 +97,29 @@
   pointer-events: none;
 }
 
+.wrapperError {
+  .error {
+    margin-top: 0.5rem;
+  }
+
+  .label {
+    color: red;
+  }
+
+  :global {
+    .select {
+      &__control {
+        border-color: red;
+
+        &:hover {
+          border-color: red;
+          outline-color: red !important;
+        }
+      }
+    }
+  }
+}
+
 .wrapperErrorIcon {
   :global {
     .select {

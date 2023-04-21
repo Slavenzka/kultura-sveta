@@ -51,6 +51,7 @@ function CalendarHeader ({
             changeYear(Number((evt as SelectCustomOptionType).value))
           }}
           hideSelectedOptions
+          isSearchable={false}
         />
         <SelectCustom
           value={{
@@ -62,6 +63,7 @@ function CalendarHeader ({
             changeMonth(MONTHS.indexOf((evt as SelectCustomOptionType).value as string))
           }}
           hideSelectedOptions
+          isSearchable={false}
         />
       </div>
     )

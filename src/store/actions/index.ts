@@ -4,6 +4,15 @@ export {
 } from './elasticAdaptive'
 
 export {
+  logInUser,
+  setLoggingInStatus,
+  submitAnswer,
+  fetchAnswers
+} from './firebase'
+
+export {
   toggleModal,
-  updateLang
+  updateLang,
+  setAuthVisibility,
+  setAnsweredStatus
 } from './ui'

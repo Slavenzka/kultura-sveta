@@ -7,7 +7,7 @@ const root = document.getElementById('root')
 
 const application = (
   <GlobalServicesProvider>
-    <ViewSwitcher />
+    <ViewSwitcher isDesktopOnly />
   </GlobalServicesProvider>
 )
 

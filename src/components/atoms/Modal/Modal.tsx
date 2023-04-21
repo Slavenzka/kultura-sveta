@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useRef } from 'react'
+import { memo, useCallback, useEffect, useMemo, useRef } from 'react'
 import css from './Modal.module.scss'
 import classnames from 'classnames'
 import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock'
@@ -7,16 +7,22 @@ import { toggleModal } from 'store/actions'
 import IconClose from 'assets/icons/IconClose'
 import { RootReducerSlices } from 'store/utils/const'
 import { RootState, useAppDispatch } from 'store/spec/global.spec'
+import { ModalTypes } from 'components/atoms/Modal/Modal.spec'
+import Map from 'components/atoms/Map/Map'
+import { MapProps } from 'components/atoms/Map/Map.spec'
+import ReactDOM from 'react-dom'
+import ModalMessage from 'components/molecules/modals/ModalMessage/ModalMessage'
+import { ModalMessageProps } from 'components/molecules/modals/ModalMessage/ModalMessage.spec'
 
 function Modal ({
   children
 }: {
-  children: JSX.Element
+  children?: JSX.Element
 }) {
   const overlayRef = useRef<HTMLDivElement>(null)
   const modal = useSelector((state: RootState) => state[RootReducerSlices.UI].modal)
   const dispatch = useAppDispatch()
-  const { content, options = {} } = modal
+  const { type, contentProps, options } = modal
   const {
     isCloseBtnRequired = true,
     isClickOutsideHandled = true,
@@ -24,7 +30,8 @@ function Modal ({
     className,
     isContentOnly,
     ...extraOptions
-  } = options
+  } = options ?? {}
+  const isModalVisible = !!type || children
 
   const handleCloseModal = useCallback(() => {
     dispatch(toggleModal(null))
@@ -50,14 +57,14 @@ function Modal ({
   )
 
   useEffect(() => {
-    if (!!content && overlayRef.current) {
+    if (!!isModalVisible && overlayRef.current) {
       disableBodyScroll(overlayRef.current, {
         reserveScrollBarGap: true,
       })
     } else {
       clearAllBodyScrollLocks()
     }
-  }, [content])
+  }, [isModalVisible])
 
   useEffect(() => {
     document.addEventListener('keydown', handleEscPress)
@@ -72,11 +79,34 @@ function Modal ({
     }
   }, [handleEscPress, handleClickOutside, isClickOutsideHandled])
 
-  return (
+  const content = useMemo(() => {
+    switch (type) {
+      case ModalTypes.MESSAGE_ERROR: {
+        return (
+          <ModalMessage {...(contentProps as ModalMessageProps)} isError />
+        )
+      }
+      case ModalTypes.MESSAGE_SUCCESS: {
+        return (
+          <ModalMessage {...(contentProps as ModalMessageProps)} />
+        )
+      }
+      case ModalTypes.MAP: {
+        return (
+          <Map {...(contentProps as MapProps)} />
+        )
+      }
+      default: return null
+    }
+  }, [type, contentProps])
+
+  if (!isModalVisible) return null
+
+  const modalNode = (
     <>
       <div
         className={classnames(css.wrapper, {
-          [css.wrapperOpened]: !!content,
+          [css.wrapperOpened]: isModalVisible,
         })}
         ref={overlayRef}
       >
@@ -97,12 +127,13 @@ function Modal ({
               Close modal
             </button>
           )}
-          {content}
+          {children || content}
         </div>
       </div>
-      { children }
     </>
   )
+
+  return ReactDOM.createPortal(modalNode, document.body)
 }
 
 export default memo(Modal)

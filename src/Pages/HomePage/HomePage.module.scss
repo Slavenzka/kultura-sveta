@@ -1,10 +1,10 @@
 @import "styles/mixins";
 
 .content {
-  --image-width: 30rem;
+  --image-width: 20rem;
   display: grid;
   grid-template-columns: var(--image-width) 1fr;
-  grid-gap: 4rem;
+  grid-gap: 10rem;
   align-items: center;
   margin-top: 4rem;
 
@@ -12,12 +12,36 @@
     content: "";
     display: block;
     width: var(--image-width);
-    height: calc(var(--image-width) / 2);
+    height: var(--image-width);
     background-image: url("../../assets/images/Moscow-1.jpg");
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
+}
+
+.participant {
+  margin-top: 25vh;
 }
 
 .form {
   margin-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (max-width: $adaptiveMax) {
+  .content {
+    --image-width: calc(30rem / 1.5);
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0;
+
+    &:not(.participant) {
+      margin-top: 2rem;
+    }
+  }
+
+  .form {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }

@@ -25,6 +25,6 @@ export interface SelectCustomizedProps extends
   isLoading?: boolean,
   error?: string,
   errorVariant?: FormElementErrorVariants,
-  customComponents?:  Pick<Partial<typeof components>, any>,
+  customComponents?: Pick<Partial<typeof components>, any>,
   onChange:(option: SelectCustomOptionType | null) => void
 }

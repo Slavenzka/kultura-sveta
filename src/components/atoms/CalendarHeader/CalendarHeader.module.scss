@@ -40,4 +40,24 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  :global {
+    .select {
+      &__control {
+        border: none;
+        outline: none;
+      }
+
+      &__single-value {
+        color: black;
+      }
+
+      &__indicators {
+        svg {
+          stroke: black;
+          fill: black;
+        }
+      }
+    }
+  }
 }

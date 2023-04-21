@@ -1,14 +1,13 @@
 import { createAction } from '@reduxjs/toolkit'
 import { LangOptions } from 'utils/const'
-import { ModalOptionsType } from 'components/atoms/Modal/Modal.spec'
+import { StoreModalStateType } from 'store/spec/ui.spec'
 
 export const updateLang = createAction<LangOptions>(`UPDATE_LANG`)
+export const setAuthVisibility = createAction<boolean>(`SET_AUTH_VISIBILITY`)
+export const setAnsweredStatus = createAction<boolean>(`SET_PARTICIPATION_STATUS`)
 
-export const toggleModal = createAction(`TOGGLE_MODAL`, function (content: JSX.Element | null, options?: ModalOptionsType) {
+export const toggleModal = createAction(`TOGGLE_MODAL`, function <T>(data: StoreModalStateType<T> | null) {
   return {
-    payload: {
-      content,
-      options
-    }
+    payload: data
   }
 })

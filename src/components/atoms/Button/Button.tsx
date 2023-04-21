@@ -39,7 +39,7 @@ function Button ({
     case ButtonVariants.FILLED: {
       return (
         <ButtonDefault
-          className={classnames(css.buttonFilled, heightClassName, className)}
+          className={classnames(css.buttonFilled, heightClassName, classNamesExtended, className)}
           {...restProps}
         >
           {buttonContentWithLoader}

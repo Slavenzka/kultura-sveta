@@ -1,4 +1,15 @@
+@import "styles/mixins";
+
 .wrapper {
   margin: 0 auto;
-  width: 100rem;
+  width: var(--container-width);
+}
+
+@media (max-width: $adaptiveMax) {
+  .wrapper {
+    margin: 0;
+    width: 100vw;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
 }

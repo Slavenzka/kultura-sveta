@@ -1,6 +1,7 @@
 @import "styles/mixins";
 
 .header {
+  --logo-width: 8rem;
   width: 100%;
   height: 5rem;
   background-color: color(white);
@@ -8,28 +9,35 @@
 
 .wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   height: 100%;
+  padding-left: calc(var(--container-width) / 2 - var(--logo-width) / 2);
 }
 
 .logo {
-  margin-left: auto;
   font-size: 0;
 
   &::before {
     content: "";
     display: block;
-    width: 3rem;
-    height: 3rem;
+    width: var(--logo-width);
+    height: calc(0.5 * var(--logo-width));
     background-image: url("../../../assets/images/logo.png");
-    background-size: cover;
+    background-size: contain;
   }
 }
 
-.button {
-  margin-left: auto;
+.navigation {
+  margin: 0 auto;
+}
 
+.wrapperAuth {
+  position: relative;
+  margin-left: auto;
+}
+
+.button {
   &:hover {
     .icon {
       fill: color(gray300);
@@ -42,5 +50,38 @@
     width: 2rem;
     fill: color(gray600);
     transition-property: fill;
+    pointer-events: none;
+  }
+}
+
+.auth {
+  position: absolute;
+  top: calc(100% + 1.5rem);
+  left: calc(50% - 31rem / 2);
+  width: 30rem;
+  z-index: 2;
+
+  &::before {
+    --arrow-width: 0.6rem;
+
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--arrow-width));
+    left: 50%;
+    border-right: var(--arrow-width) solid transparent;
+    border-bottom: var(--arrow-width) solid black;
+    border-left: var(--arrow-width) solid transparent;
+  }
+}
+
+@media (max-width: $adaptiveMax) {
+  .header {
+    --logo-width: 6rem;
+    height: 4rem;
+  }
+
+  .wrapper {
+    justify-content: center;
+    padding-left: 1rem;
   }
 }

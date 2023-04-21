@@ -5,32 +5,47 @@
 }
 
 .wrapperDefault {
-  display: inline-flex;
-  flex-wrap: wrap;
+  --checkbox-size: 1.8rem;
+  display: grid;
+  grid-template-columns: var(--checkbox-size) minmax(0, 1fr);
+  grid-gap: 0.8rem;
   align-items: center;
+  cursor: pointer;
 
   &::before {
+    @include transitionDuration;
+
     content: "";
-    width: 1.8rem;
-    height: 1.8rem;
-    border: 1px solid black;
-    border-radius: 0.2rem;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    border: 1px solid color(white);
+    outline: 2px solid transparent;
+    transition-property: outline-color;
+  }
+
+  &:hover {
+    &::before {
+      outline: 2px solid color(white);
+    }
   }
 
   .label {
-    margin: 0 0 0 1rem;
+    @include fontRegular(color(white));
+
+    margin: 0;
   }
 
   .icon {
     position: absolute;
-    top: 0.5rem;
+    top: calc(50% - 1rem / 2);
     left: 0.4rem;
     width: 1.2rem;
-    stroke: red;
+    stroke: color(white);
     fill: none;
   }
 
   .error {
+    grid-column: 1 / -1;
     margin-top: 0.5rem;
     width: 100%;
   }

@@ -1,0 +1,33 @@
+@import "styles/mixins";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  grid-gap: 2rem;
+  align-items: center;
+  width: 40rem;
+  padding: 3rem;
+}
+
+.icon {
+  fill: color(gray600);
+}
+
+.description {
+  @include fontSmall(color(gray600));
+
+  margin: 1rem 0 0 0;
+}
+
+.button {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: $adaptiveMax) {
+  .wrapper {
+    grid-template-columns: 3rem 1fr;
+    padding: 2rem 1rem;
+    width: 90vw;
+  }
+}

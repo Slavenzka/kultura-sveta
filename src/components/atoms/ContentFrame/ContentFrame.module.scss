@@ -1,6 +1,12 @@
 @import "styles/mixins";
 
 .wrapper {
-  padding: 3rem 4rem;
+  padding: 3rem 6rem;
   background-color: color(white);
+}
+
+@media (max-width: $adaptiveMax) {
+  .wrapper {
+    padding: 2rem;
+  }
 }

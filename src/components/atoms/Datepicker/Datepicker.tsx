@@ -16,7 +16,6 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { DateInputType, DatepickerProps, DatepickerVariants } from './Datepicker.spec'
 import CalendarHeader from 'components/atoms/CalendarHeader/CalendarHeader'
-import { InputVariants } from 'components/atoms/Input/Input.spec'
 import { WeekDaysLocale } from 'utils/const'
 import { getFormattedDate } from 'utils/helpers'
 
@@ -73,7 +72,6 @@ const Datepicker = forwardRef(({
     return (
       <Input
         {...inputProps}
-        variant={InputVariants.CALENDAR_DEFAULT}
         label={label}
         readOnly
       />
@@ -127,7 +125,7 @@ const Datepicker = forwardRef(({
           />
         )}
         showPopperArrow={false}
-        popperPlacement={'left-start'}
+        popperPlacement={'top'}
         popperModifiers={[
           {
             name: 'offset',

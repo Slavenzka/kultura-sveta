@@ -6,7 +6,6 @@
   --timepicker-area-width: 10rem;
 
   position: relative;
-  display: flex;
 
   :global {
     .react-datepicker {
@@ -45,6 +44,7 @@
       &__month-container {
         padding: 1rem;
         width: var(--calendar-size);
+        background-color: color(white);
       }
 
       &__day-names {

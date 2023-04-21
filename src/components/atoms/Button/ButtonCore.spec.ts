@@ -36,4 +36,5 @@ export interface ButtonCoreProps extends PropsWithClassName {
   onMouseUp?: MouseEventHandler;
   onMouseDown?: MouseEventHandler;
   tabIndex?: string;
+  getRef?: (node: HTMLElement) => void
 }

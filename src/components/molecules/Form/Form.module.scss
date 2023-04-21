@@ -1,16 +1,83 @@
 @import "styles/mixins";
 
-.grid {
+.containerSingle {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 3rem;
+  align-items: flex-start;
+  margin-top: 3rem;
+  padding: 3rem 15rem;
+  border: none;
+  background-color: color(gray700);
+}
+
+.containerDouble {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 3rem;
+  align-items: flex-start;
   padding: 0;
   border: none;
+}
+
+.containerMaps {
+  margin-top: 3rem;
 }
 
 .button {
   grid-column: 1 / -1;
 
   display: block;
-  margin: 4rem auto 0 auto;
+  margin: 2rem auto 0 auto;
+}
+
+.error {
+  margin-top: 1rem;
+}
+
+.inputMap {
+  input {
+    padding-right: 5rem;
+    cursor: pointer;
+  }
+
+  .iconMap {
+    @include transitionDuration;
+
+    position: absolute;
+    bottom: 0.9rem;
+    right: 1rem;
+    width: 3rem;
+    fill: color(white);
+    transition-property: fill;
+  }
+
+  .iconMapError {
+    fill: red;
+  }
+}
+
+.agreement {
+  margin-top: 5rem;
+}
+
+@media (max-width: $adaptiveMax) {
+  .containerSingle {
+    grid-gap: 2rem;
+    margin-top: 2rem;
+    padding: 0;
+  }
+
+  .containerDouble {
+    grid-template-columns: 100%;
+    grid-gap: 2rem;
+  }
+
+  .checkboxGroup {
+    margin-top: 1.5rem;
+  }
+
+  .agreement {
+    margin-top: 2.5rem;
+  }
 }

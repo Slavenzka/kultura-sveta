@@ -87,7 +87,8 @@
 
         &:hover,
         &:focus {
-          outline-color: red;
+          border-color: red;
+          outline-color: red !important;
         }
       }
 
@@ -124,6 +125,14 @@
       bottom: 1.3rem;
       right: 1rem;
     }
+  }
+}
+
+.wrapperTextarea {
+  textarea.input {
+    padding: 1rem;
+    height: 20rem;
+    resize: none;
   }
 }
 

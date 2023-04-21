@@ -16,7 +16,6 @@ import IconSpinner from 'assets/icons/IconSpinner'
 import IconArrowDropdown from 'assets/icons/IconArrowDropdown'
 
 function SelectCustomized ({
-  className,
   variant = SelectVariants.DEFAULT,
   label,
   inputLabelVariant = InputLabelVariants.DEFAULT,
@@ -57,8 +56,10 @@ function SelectCustomized ({
         [css.wrapperDefault]: variant === SelectVariants.DEFAULT,
         [css.wrapperDisabled]: isDisabled,
         [css.wrapperLoading]: isLoading,
+        [css.wrapperError]: Boolean(error),
         [css.wrapperErrorIcon]: Boolean(error) && errorVariant === FormElementErrorVariants.ICON
       })}
+      classNameLabel={css.label}
     >
       <Select
         className={css.select}

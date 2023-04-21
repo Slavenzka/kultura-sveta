@@ -1,25 +1,35 @@
 import { createReducer } from '@reduxjs/toolkit'
-import { LangOptions } from 'utils/const'
-import { toggleModal, updateLang } from 'store/actions'
+import { LangOptions, LocalStorageProps } from 'utils/const'
+import { setAnsweredStatus, setAuthVisibility, toggleModal, updateLang } from 'store/actions'
 import { StoreUISlice } from 'store/spec/ui.spec'
 
-const INITIAL_STATE: StoreUISlice = {
+const INITIAL_STATE: StoreUISlice<unknown> = {
   modal: {
-    content: null,
+    type: null,
+    contentProps: null,
     options: {},
   },
-  lang: LangOptions.UA
+  lang: LangOptions.UA,
+  isAuthVisible: false,
+  isAnswered: !!localStorage.getItem(LocalStorageProps.KS_IS_ANSWERED)
 }
 
 export const uiReducer = createReducer(INITIAL_STATE, builder => {
   builder
     .addCase(toggleModal, (store, {payload}) => {
-      const {content, options = {}} = payload
+      const {type, contentProps, options} = payload ?? {}
 
-      store.modal.content = content
-      store.modal.options = options
+      store.modal.type = type ?? null
+      store.modal.contentProps = contentProps ?? null
+      store.modal.options = options ?? {}
     })
     .addCase(updateLang, (store, {payload}) => {
       store.lang = payload
+    })
+    .addCase(setAuthVisibility, (store, {payload}) => {
+      store.isAuthVisible = payload
+    })
+    .addCase(setAnsweredStatus, (store, {payload}) => {
+      store.isAnswered = payload
     })
 })

@@ -37,3 +37,9 @@
 .h4 {
   @include h4(color(black));
 }
+
+@media (max-width: $adaptiveMax) {
+  .h2 {
+    padding: 1rem 0;
+  }
+}

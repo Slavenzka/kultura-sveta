@@ -1,0 +1,33 @@
+@import "styles/mixins";
+
+.wrapper {
+  margin-top: auto;
+  background-color: color(gray700);
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.label,
+.link {
+  @include fontSmall(color(white));
+
+  opacity: 0.3;
+}
+
+.link {
+  @include transitionDuration;
+
+  margin-left: 0.5rem;
+  font-weight: 600;
+  transition-property: opacity;
+
+  &:hover {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,26 @@
+@import "styles/mixins";
+
+.wrapper {
+  opacity: 0;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  .link {
+    @include fontSmall(color(gray600));
+  }
+
+  & + .item {
+    margin-left: 1.5rem;
+  }
+}
+
+.itemActive {
+  .link {
+    color: color(gray300);
+  }
+}

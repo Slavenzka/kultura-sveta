@@ -1,0 +1,14 @@
+@import "styles/mixins";
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.legend {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 2;
+}
+

@@ -8,6 +8,7 @@ export enum InputVariants {
   SEARCH = `SEARCH`,
   CALENDAR_DEFAULT = `CALENDAR_DEFAULT`,
   PASSWORD = `PASSWORD`,
+  TEXTAREA = `TEXTAREA`
 }
 
 export enum InputTypes {

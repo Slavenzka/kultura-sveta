@@ -1,12 +1,15 @@
 import { LangOptions } from 'utils/const'
-import { ModalOptionsType } from 'components/atoms/Modal/Modal.spec'
+import { ModalOptionsType, ModalTypes } from 'components/atoms/Modal/Modal.spec'
 
-export interface StoreModalStateType {
-  content: JSX.Element | null,
-  options: ModalOptionsType
+export interface StoreModalStateType<T> {
+  type: ModalTypes | null,
+  contentProps?: T,
+  options?: ModalOptionsType
 }
 
-export interface StoreUISlice {
-  modal: StoreModalStateType,
-  lang: LangOptions
+export interface StoreUISlice<T> {
+  modal: StoreModalStateType<T>,
+  lang: LangOptions,
+  isAuthVisible: boolean,
+  isAnswered: boolean
 }

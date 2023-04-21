@@ -12,6 +12,7 @@ function ButtonCore ({
   onClick,
   onMouseDown,
   onMouseUp,
+  getRef,
   ...restProps
 }: ButtonCoreProps): JSX.Element {
   const isHTML: boolean = Boolean(url) &&
@@ -44,6 +45,7 @@ function ButtonCore ({
   return (
     <TagName
       className={classnames(className, css.button)}
+      ref={getRef}
       {...extraProps}
       {...restProps}
     >

@@ -1,4 +1,5 @@
 {
+  "homepage": "https://slavenzka.github.io/kultura-sveta/",
   "name": "unex-constructor",
   "version": "0.1.0",
   "private": true,
@@ -29,7 +30,9 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "doc": "jsdoc -c jsdoc.json"
+    "doc": "jsdoc -c jsdoc.json",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "overrides": [
@@ -64,6 +67,7 @@
     ]
   },
   "devDependencies": {
+    "@pbe/react-yandex-maps": "^1.2.4",
     "@reduxjs/toolkit": "^1.9.1",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
@@ -93,6 +97,8 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-storybook": "^0.6.10",
+    "firebase": "^9.19.1",
+    "gh-pages": "^5.0.0",
     "he": "^1.2.0",
     "luxon": "^2.4.0",
     "nanoid": "^3.2.0",

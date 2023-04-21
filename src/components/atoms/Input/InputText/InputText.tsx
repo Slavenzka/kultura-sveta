@@ -2,7 +2,7 @@ import { memo } from 'react'
 import css from './InputText.module.scss'
 import classnames from 'classnames'
 import { InputTextProps } from 'components/atoms/Input/InputText/InputText.spec'
-import { InputHeights, InputTypes, InputVariants } from 'components/atoms/Input/Input.spec'
+import { InputHeights, InputVariants } from 'components/atoms/Input/Input.spec'
 import FormElementTemplate from 'components/templates/FormElementTemplate/FormElementTemplate'
 import IconSpinner from 'assets/icons/IconSpinner'
 import FormElementError from 'components/atoms/FormElementError/FormElementError'
@@ -16,18 +16,19 @@ function InputText ({
   isRequired,
   classNameLabel,
   label,
-  type = InputTypes.TEXT,
   error,
   errorVariant,
   isDisabled,
   isLoading,
   children,
+  TagName = `input`,
   ...restProps
 }: InputTextProps) {
   const isIconError = errorVariant === FormElementErrorVariants.ICON
+  const isTextarea = variant === InputVariants.TEXTAREA
 
   const variantClassName = classnames({
-    [css.wrapperDefault]: variant === InputVariants.DEFAULT
+    [css.wrapperDefault]: variant === InputVariants.DEFAULT || isTextarea
   })
 
   const heightClassName = classnames({
@@ -43,6 +44,7 @@ function InputText ({
         [css.wrapperIconError]: isIconError,
         [css.wrapperDisabled]: isDisabled,
         [css.wrapperLoading]: isLoading,
+        [css.wrapperTextarea]: isTextarea
       })}
       classNameLabel={classnames(css.label, classNameLabel)}
       label={label}
@@ -50,7 +52,7 @@ function InputText ({
       isDisabled={isDisabled}
       isError={Boolean(error)}
     >
-      <input
+      <TagName
         className={css.input}
         {...restProps}
       />

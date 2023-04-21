@@ -2,7 +2,9 @@ import 'normalize.css'
 import 'styles/common.scss'
 import { Provider } from 'react-redux'
 import { store } from 'store/configureStore'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
+import Modal from 'components/atoms/Modal/Modal'
+import { YMaps } from '@pbe/react-yandex-maps'
 
 function GlobalServicesProvider ({
   children
@@ -11,9 +13,12 @@ function GlobalServicesProvider ({
 }) {
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        {children}
-      </BrowserRouter>
+      <HashRouter>
+        <YMaps>
+          <Modal />
+          {children}
+        </YMaps>
+      </HashRouter>
     </Provider>
   )
 }

@@ -1,0 +1,30 @@
+@import "styles/mixins";
+
+.wrapper {
+  padding: 2rem;
+  color: color(white);
+  background-color: color(gray700);
+}
+
+.heading {
+  color: color(white);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-row-gap: 2rem;
+  margin-top: 1rem;
+  padding: 0;
+  border: none;
+}
+
+.button {
+  display: block;
+  margin: 3rem auto 0 auto;
+}
+
+.error {
+  margin-top: 1rem;
+}

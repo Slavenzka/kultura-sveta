@@ -1,0 +1,24 @@
+@import "styles/mixins";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.spinner {
+  margin: auto;
+  width: 8rem;
+  stroke: color(white)
+}
+
+.filter {
+  margin-top: 4rem;
+}
+
+.empty {
+  @include fontRegular(color(white));
+
+  text-align: center;
+}

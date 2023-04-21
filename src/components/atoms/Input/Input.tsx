@@ -1,9 +1,9 @@
 import { memo } from 'react'
-import { InputProps, InputVariants } from 'components/atoms/Input/Input.spec'
+import { InputProps, InputTypes, InputVariants } from 'components/atoms/Input/Input.spec'
 import InputText from 'components/atoms/Input/InputText/InputText'
-import { InputTextProps } from 'components/atoms/Input/InputText/InputText.spec'
 import InputCheckbox from 'components/atoms/Input/InputCheckbox/InputCheckbox'
 import { InputCheckboxProps } from 'components/atoms/Input/InputCheckbox/InputCheckbox.spec'
+import { InputTextProps } from 'components/atoms/Input/InputText/InputText.spec'
 
 function Input (props: InputProps) {
   const {variant} = props
@@ -12,8 +12,11 @@ function Input (props: InputProps) {
     case InputVariants.CHECKBOX_DEFAULT: {
       return <InputCheckbox {...(props as InputCheckboxProps)} />
     }
+    case InputVariants.TEXTAREA: {
+      return <InputText TagName="textarea" {...(props as InputTextProps)} />
+    }
     default: {
-      return <InputText {...(props as InputTextProps)} />
+      return <InputText type={InputTypes.TEXT} {...(props as InputTextProps)} />
     }
   }
 }

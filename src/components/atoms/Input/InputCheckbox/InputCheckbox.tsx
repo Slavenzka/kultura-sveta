@@ -9,6 +9,7 @@ import FormElementError from 'components/atoms/FormElementError/FormElementError
 import { PopperPlacementTypes } from 'hooks/ui/usePopperProvider'
 
 function InputCheckbox ({
+  className,
   label,
   classNameLabel,
   isRequired,
@@ -29,7 +30,7 @@ function InputCheckbox ({
 
   return (
     <FormElementTemplate
-      className={classnames({
+      className={classnames(className, {
         [css.wrapperChecked]: checked,
         [css.wrapperDefault]: isDefault,
         [css.wrapperError]: !!error,

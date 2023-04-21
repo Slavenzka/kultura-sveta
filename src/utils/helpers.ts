@@ -1,4 +1,10 @@
 import { CALENDAR_START_YEAR, MONTHS } from 'utils/const'
+import {
+  MapMarkerCoordsType,
+  MapMarkerRequestValueType
+} from 'components/molecules/MapMarkerRequest/MapMarkerRequest.spec'
+import { CheckboxBatteryItemType } from 'components/molecules/CheckboxBattery/CheckboxBattery.spec'
+import { FieldValues, UseFormSetValue } from 'react-hook-form'
 
 export function throttle(func: (...args: any) => unknown, ms = 500): (...args: unknown[]) => unknown {
   let isThrottled = false,
@@ -83,3 +89,53 @@ export const monthOptions = new Array(MONTHS.length)
     label: MONTHS[index],
     value: MONTHS[index]
   }))
+
+export const getMapPickerValue = (value: MapMarkerRequestValueType, isMultiple?: boolean) => {
+  if (!isMultiple) return value
+    ? JSON.stringify(value)
+    : ``
+
+  return value
+    ? `Поставлено меток: ${value.length}`
+    : ``
+}
+
+export const getCheckboxBatteryDefaultOptions = (options: string[], isOtherRequired?: boolean) => {
+  const baseResults = (options as string[]).map(item => ({
+    label: item,
+    value: false
+  }))
+
+  return isOtherRequired
+    ? [
+      ...baseResults,
+      {
+        label: ``,
+        value: false,
+        isCustom: true
+      }
+    ]
+    : baseResults
+}
+
+export function validateCheckboxBattery (value: CheckboxBatteryItemType[], errorMessage: string) {
+  const isAnyChecked = value.reduce((total, item) => {
+    if (!total && item.value) {
+      total = true
+    }
+
+    return total
+  }, false)
+
+  return isAnyChecked || errorMessage
+}
+
+export function stringifyCoords (coords: MapMarkerCoordsType[]) {
+  return `[${coords.map(coord => `[${coord}]`)}]`
+}
+
+export function resetFieldArray (name: string, defaultValues: CheckboxBatteryItemType[], setValue: UseFormSetValue<FieldValues>) {
+  defaultValues.forEach((item, index) => {
+    setValue(`${name}.${index}`, item)
+  })
+}

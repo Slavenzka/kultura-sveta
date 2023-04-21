@@ -40,4 +40,5 @@ export interface ButtonProps extends
   * Adds styling for the loading state of the button
   */
   isLoading?: boolean;
+  getRef?: (node: HTMLElement) => void
 }

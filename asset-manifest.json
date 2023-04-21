@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kultura-sveta/static/css/main.d5760bb7.css",
-    "main.js": "/kultura-sveta/static/js/main.0c0bde94.js",
+    "main.css": "/kultura-sveta/static/css/main.9f30c9a2.css",
+    "main.js": "/kultura-sveta/static/js/main.b8124ab1.js",
     "static/media/SF-Pro-Display-Bold.woff2": "/kultura-sveta/static/media/SF-Pro-Display-Bold.ff426b2dd6629d4b3153.woff2",
     "static/media/SF-Pro-Display-Regular.woff2": "/kultura-sveta/static/media/SF-Pro-Display-Regular.dc37d96f4270d27fd1a6.woff2",
     "static/media/SF-Pro-Display-Bold.woff": "/kultura-sveta/static/media/SF-Pro-Display-Bold.de44ba31b24b87fb127e.woff",
@@ -13,11 +13,11 @@
     "static/media/Moscow-1.jpg": "/kultura-sveta/static/media/Moscow-1.68b911226f2744ab3955.jpg",
     "static/media/FuturaPT-Book.woff2": "/kultura-sveta/static/media/FuturaPT-Book.ad56f168e23d283dcc69.woff2",
     "index.html": "/kultura-sveta/index.html",
-    "main.d5760bb7.css.map": "/kultura-sveta/static/css/main.d5760bb7.css.map",
-    "main.0c0bde94.js.map": "/kultura-sveta/static/js/main.0c0bde94.js.map"
+    "main.9f30c9a2.css.map": "/kultura-sveta/static/css/main.9f30c9a2.css.map",
+    "main.b8124ab1.js.map": "/kultura-sveta/static/js/main.b8124ab1.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5760bb7.css",
-    "static/js/main.0c0bde94.js"
+    "static/css/main.9f30c9a2.css",
+    "static/js/main.b8124ab1.js"
   ]
 }

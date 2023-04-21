@@ -1,0 +1,66 @@
+[debug] [2023-04-21T13:52:24.511Z] ----------------------------------------------------------------------
+[debug] [2023-04-21T13:52:24.514Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\iroma\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-04-21T13:52:24.515Z] CLI Version:   11.27.0
+[debug] [2023-04-21T13:52:24.515Z] Platform:      win32
+[debug] [2023-04-21T13:52:24.516Z] Node Version:  v16.15.0
+[debug] [2023-04-21T13:52:24.517Z] Time:          Fri Apr 21 2023 17:52:24 GMT+0400 (Азербайджан, стандартное время)
+[debug] [2023-04-21T13:52:24.518Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-21T13:52:24.662Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-21T13:52:24.664Z] > authorizing via signed-in user (lightningculture@gmail.com)
+[debug] [2023-04-21T13:52:24.672Z] [iam] checking project kultura-sveta for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-04-21T13:52:24.692Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/kultura-sveta:testIamPermissions [none]
+[debug] [2023-04-21T13:52:24.693Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/kultura-sveta:testIamPermissions x-goog-quota-user=projects/kultura-sveta
+[debug] [2023-04-21T13:52:24.694Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kultura-sveta:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-21T13:52:25.807Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/kultura-sveta:testIamPermissions 200
+[debug] [2023-04-21T13:52:25.807Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kultura-sveta:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-21T13:52:25.809Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/kultura-sveta [none]
+[debug] [2023-04-21T13:52:26.372Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/kultura-sveta 200
+[debug] [2023-04-21T13:52:26.372Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/kultura-sveta {"projectId":"kultura-sveta","projectNumber":"422400565639","displayName":"Kultura Sveta","name":"projects/kultura-sveta","resources":{"hostingSite":"kultura-sveta"},"state":"ACTIVE","etag":"1_757a42cb-1e2f-4c97-8c90-173434052c8a"}
+[info] 
+[info] === Deploying to 'kultura-sveta'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2023-04-21T13:52:26.380Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/kultura-sveta:test [none]
+[debug] [2023-04-21T13:52:26.381Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/kultura-sveta:test [omitted]
+[debug] [2023-04-21T13:52:27.337Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/kultura-sveta:test 200
+[debug] [2023-04-21T13:52:27.337Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/kultura-sveta:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2023-04-21T13:52:27.345Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/kultura-sveta/versions [none]
+[debug] [2023-04-21T13:52:27.345Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/kultura-sveta/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-04-21T13:52:28.875Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/kultura-sveta/versions 200
+[debug] [2023-04-21T13:52:28.875Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/kultura-sveta/versions {"name":"projects/422400565639/sites/kultura-sveta/versions/ba0adeda21c3f2af","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  firestore: deploying indexes... 
+[debug] [2023-04-21T13:52:28.878Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/kultura-sveta/releases pageSize=10&pageToken=
+[debug] [2023-04-21T13:52:28.880Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/kultura-sveta/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2023-04-21T13:52:29.485Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/kultura-sveta/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2023-04-21T13:52:29.486Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/kultura-sveta/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2023-04-21T13:52:29.486Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/kultura-sveta/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2023-04-21T13:52:29.850Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/kultura-sveta/releases 200
+[debug] [2023-04-21T13:52:29.851Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/kultura-sveta/releases {"releases":[{"name":"projects/kultura-sveta/releases/cloud.firestore","rulesetName":"projects/kultura-sveta/rulesets/b078a191-e7dc-4c61-978a-4be7cc7a085b","createTime":"2023-04-16T17:21:29.413758Z","updateTime":"2023-04-21T13:51:04.024999Z"}]}
+[debug] [2023-04-21T13:52:29.851Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/kultura-sveta/rulesets/b078a191-e7dc-4c61-978a-4be7cc7a085b [none]
+[debug] [2023-04-21T13:52:30.072Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/kultura-sveta/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2023-04-21T13:52:30.072Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/kultura-sveta/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/kultura-sveta/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully for (default) database 
+[debug] [2023-04-21T13:52:30.337Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/kultura-sveta/rulesets/b078a191-e7dc-4c61-978a-4be7cc7a085b 200
+[debug] [2023-04-21T13:52:30.337Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/kultura-sveta/rulesets/b078a191-e7dc-4c61-978a-4be7cc7a085b [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[info] i  hosting[kultura-sveta]: beginning deploy... 
+[info] i  hosting[kultura-sveta]: found 20 files in build 
+[debug] [2023-04-21T13:52:30.359Z] [hosting] uploading with 200 concurrency
+[debug] [2023-04-21T13:52:30.370Z] [hosting] hash cache [YnVpbGQ] stored for 20 files
+[debug] [2023-04-21T13:52:30.370Z] [hosting][hash queue][FINAL] {"max":5,"min":1,"avg":1,"active":0,"complete":20,"success":20,"errored":0,"retried":0,"total":20,"elapsed":8}
+[debug] [2023-04-21T13:52:30.371Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/422400565639/sites/kultura-sveta/versions/ba0adeda21c3f2af:populateFiles [none]
+[debug] [2023-04-21T13:52:30.371Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/422400565639/sites/kultura-sveta/versions/ba0adeda21c3f2af:populateFiles {"files":{"/asset-manifest.json":"59069962725466f87abcdc9367ace2f97d3ecfcf9db3877f82c239ac161215e3","/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","/index.html":"c37b50e15f4726760d14d493e5a5655cc4cc17f2ffae786d999716508353aa6f","/manifest.json":"5c997de1364b8be939319fa9209abd77f2caf7f8844999a9e2e9173f844e7840","/robots.txt":"b2090cf9761ef60aa06e4fab97679bd43dfa5e5df073701ead5879d7c68f1ec5","/static/css/main.9f30c9a2.css":"7a1a4ae20d84b7f4edfee0b36ce5e324d0b12319497d159c08539aa63bd1d386","/static/css/main.9f30c9a2.css.map":"5d829aed4deb5410d904b102579fe0acc6803a99427f42161fd060f254063af8","/static/js/main.b8124ab1.js":"551e35b5e98b4bb80e30fa4083d923a82f714ff3fe6b0d54ecbdcbfc794c382f","/static/js/main.b8124ab1.js.LICENSE.txt":"4423cb839025d9623b93efd8f93a302a1a01b5043a15c16faebc49678a5e71df","/static/js/main.b8124ab1.js.map":"d14586b8f8c4bff8773d540760bdfd1e9752e27f02d9f1617c25636fb2c98312","/static/media/FuturaPT-Book.ad56f168e23d283dcc69.woff2":"76a13f330659fc5bba93b6cd6d1f5c254ffaa7bd919d8f4f89918b7c4ad59e25","/static/media/FuturaPT-Book.d554082b7184cb0a84b7.woff":"260eb626b064da53a7b31b9659b4a13efadac78ec75261cab58a831d975fab16","/static/media/logo.451d69b89d09387a897f.png":"d778b3a886e90206dfc70d995fc0536b52ae6b6bc86af2930f2ddf6909c211ec","/static/media/Moscow-1.68b911226f2744ab3955.jpg":"18c7be37d0a2185f7cceb864a4cebe69d0437ac0122d8f1c28c4e6d89f04f487","/static/media/SF-Pro-Display-Bold.de44ba31b24b87fb127e.woff":"6d522551b0711b180297775883a6b75600097b68f24e81d8f450d2cce045e5ef","/static/media/SF-Pro-Display-Bold.ff426b2dd6629d4b3153.woff2":"b6d0a09f28cc87909503ecf6c9036e598593295953226de813597e7757e78bb6","/static/media/SF-Pro-Display-Regular.80d567b91b40397c4c20.woff":"ca202d0162a351b5493b5034c3bec137f31508167dd7d8383e79e4dd0714c89a","/static/media/SF-Pro-Display-Regular.dc37d96f4270d27fd1a6.woff2":"569d326ad68c99f679a63a2967d07b2a3e380dc9d5a05f6ab337339a2e5267eb","/static/media/TenorSans-Regular.2246f06146be3e96566c.woff2":"310b5541585d7e6a73c5c8524d2fdd7b6fb68bbedc4459fd08b48193b269d11a","/static/media/TenorSans-Regular.376b88c1635dae964eee.woff":"9b75d299dd3f1080b283c6e6aa9076acc9bb1ef375909b0239c45ac5f451fab9"}}
+[debug] [2023-04-21T13:52:31.653Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/422400565639/sites/kultura-sveta/versions/ba0adeda21c3f2af:populateFiles 200
+[debug] [2023-04-21T13:52:31.654Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/422400565639/sites/kultura-sveta/versions/ba0adeda21c3f2af:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/kultura-sveta/versions/ba0adeda21c3f2af/files"}
+[debug] [2023-04-21T13:52:31.654Z] [hosting][populate queue][FINAL] {"max":1287,"min":1287,"avg":1287,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1287}
+[debug] [2023-04-21T13:52:31.654Z] [hosting] uploads queued: 0
+[debug] [2023-04-21T13:52:31.655Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1682085151655}
+[info] +  hosting[kultura-sveta]: file upload complete 
+[debug] [2023-04-21T13:52:31.656Z] [hosting] deploy completed after 1315ms
+[debug] [2023-04-21T13:52:31.660Z] [rules] releasing cloud.firestore/(default) with ruleset projects/kultura-sveta/rulesets/b078a191-e7dc-4c61-978a-4be7cc7a085b
+[debug] [2023-04-21T13:52:31.661Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/kultura-sveta/releases/cloud.firestore/(default) [none]
+[debug] [2023-04-21T13:52:31.661Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/kultura-sveta/releases/cloud.firestore/(default) {"release":{"name":"projects/kultura-sveta/releases/cloud.firestore/(default)","rulesetName":"projects/kultura-sveta/rulesets/b078a191-e7dc-4c61-978a-4be7cc7a085b"}}

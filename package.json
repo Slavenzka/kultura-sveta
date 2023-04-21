@@ -1,6 +1,6 @@
 {
-  "homepage": "https://slavenzka.github.io/kultura-sveta/",
-  "name": "unex-constructor",
+  "homepage": "https://kultura-sveta.web.app/",
+  "name": "kultura-sveta",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.af198011.css",
+    "main.css": "/static/css/main.46e07b8f.css",
     "main.js": "/static/js/main.3f01ef3f.js",
     "static/media/SF-Pro-Display-Bold.woff2": "/static/media/SF-Pro-Display-Bold.ff426b2dd6629d4b3153.woff2",
     "static/media/SF-Pro-Display-Regular.woff2": "/static/media/SF-Pro-Display-Regular.dc37d96f4270d27fd1a6.woff2",
@@ -13,11 +13,11 @@
     "static/media/Moscow-1.jpg": "/static/media/Moscow-1.68b911226f2744ab3955.jpg",
     "static/media/FuturaPT-Book.woff2": "/static/media/FuturaPT-Book.ad56f168e23d283dcc69.woff2",
     "index.html": "/index.html",
-    "main.af198011.css.map": "/static/css/main.af198011.css.map",
+    "main.46e07b8f.css.map": "/static/css/main.46e07b8f.css.map",
     "main.3f01ef3f.js.map": "/static/js/main.3f01ef3f.js.map"
   },
   "entrypoints": [
-    "static/css/main.af198011.css",
+    "static/css/main.46e07b8f.css",
     "static/js/main.3f01ef3f.js"
   ]
 }

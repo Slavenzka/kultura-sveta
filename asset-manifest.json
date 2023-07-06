@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2b404f7a.css",
-    "main.js": "/static/js/main.cbb9d7ca.js",
+    "main.js": "/static/js/main.cb176761.js",
     "static/media/SF-Pro-Display-Bold.woff2": "/static/media/SF-Pro-Display-Bold.ff426b2dd6629d4b3153.woff2",
     "static/media/SF-Pro-Display-Regular.woff2": "/static/media/SF-Pro-Display-Regular.dc37d96f4270d27fd1a6.woff2",
     "static/media/SF-Pro-Display-Bold.woff": "/static/media/SF-Pro-Display-Bold.de44ba31b24b87fb127e.woff",
@@ -14,10 +14,10 @@
     "static/media/FuturaPT-Book.woff2": "/static/media/FuturaPT-Book.ad56f168e23d283dcc69.woff2",
     "index.html": "/index.html",
     "main.2b404f7a.css.map": "/static/css/main.2b404f7a.css.map",
-    "main.cbb9d7ca.js.map": "/static/js/main.cbb9d7ca.js.map"
+    "main.cb176761.js.map": "/static/js/main.cb176761.js.map"
   },
   "entrypoints": [
     "static/css/main.2b404f7a.css",
-    "static/js/main.cbb9d7ca.js"
+    "static/js/main.cb176761.js"
   ]
 }
